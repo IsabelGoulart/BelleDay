@@ -1,0 +1,71 @@
+   
+   
+   
+   <STYle>
+    /* Navbar */
+.navbar-nav .nav-link {
+    color: #68bbd6;
+    
+}
+
+.navbar-nav .nav-link:hover {
+    color: #638fa3;
+}
+
+/* Centralizando o menu */
+.navbar-nav {
+    justify-content: center;
+    width: 100%;
+}
+/* Navbar fixa no topo */
+#navbar {
+    transition: top 0.9s; /* Suaviza o movimento da navbar */
+    font-size:17px;
+   
+}
+
+/* Quando o cabeçalho estiver escondido */
+#navbar.hidden {
+    top: -80px; /* Ajuste esse valor conforme a altura da sua navbar */
+}
+
+/* Quando o mouse passar sobre a navbar, ela aparece */
+#navbar:hover {
+    top: 0; /* Navbar aparece novamente */
+}
+
+/* Aplica a fonte gordinha (Poppins, peso 600) aos links de navegação específicos */
+#navbar .navbar-nav .nav-item:nth-child(1) .nav-link, 
+#navbar .navbar-nav .nav-item:nth-child(2) .nav-link, 
+#navbar .navbar-nav .nav-item:nth-child(3) .nav-link, 
+#navbar .navbar-nav .nav-item:nth-child(4) .nav-link {
+    font-family: 'Poppins', sans-serif;  /* Fonte Poppins */
+    font-weight: 600;  /* Peso 600 para uma fonte mais gordinha */
+}
+
+   </STYle>
+   
+   <!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img class="logo" src="logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="tea.html">Convivendo com o TEA</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="#calendario">Calendários</a></li>
+                <a href="login.html" class="login">Login</a>
+               <a href="botao2.html">
+    <button class="botao"> <img src="autocontrole.png" alt="Sirene de Alerta" class="imagem-botao"> </button>
+</a>
+
+            </ul>
+        </div>
+    </div>

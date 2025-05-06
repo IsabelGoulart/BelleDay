@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="loguinha2.png">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style type="text/css" media="all">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e9cbd0, #e9cbd0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 1rem;
+            flex-direction: column;
+            padding: 0 20px;
+        }
+
+        
+        .logo {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px; 
+            height: auto;
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+
+       
+        @keyframes floatLogo {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .form {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.21);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 0.5s ease-out forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            color: #FF723E;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #FF659F;
+            background-color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #FF723E;
+            box-shadow: 0 0 5px rgba(2, 94, 89, 0.5);
+        }
+
+        .submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: #FF723E;
+            border: none;
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+        }
+
+        .submit:hover {
+            background-color: #FF659F;
+        }
+
+        .submit:active {
+            transform: scale(0.98);
+        }
+
+        .show-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #FF659F;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, rotate 0.3s ease;
+        }
+
+        .signup-link {
+            font-size: 0.875rem;
+            text-align: center;
+            color: #6B7280;
+            margin-top: 1rem;
+        }
+
+        .signup-link a {
+            color: #FF723E;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <img src="novo.png" alt="Logo" class="logo">
+
+    <form class="form" action="login.php" method="POST">
+        <p class="form-title">Login</p>
+        <div class="input-container">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-container">
+            <input type="password" name="senha" placeholder="Senha" id="password" required autocomplete="current-password">
+            <button type="button" class="show-password" onclick="togglePassword('password')">
+                <i class="fas fa-eye-slash" id="eye-icon"></i>
+            </button>
+        </div>
+        <button type="submit" class="submit">Entrar</button>
+        <p class="signup-link">
+            Não possui conta? <a href="cadastro.html">Cadastre-se</a>
+        </p>
+    </form>
+    
+
+    <script>
+        function togglePassword(id) {
+            var input = document.getElementById(id);
+            var type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+
+           
+            var eyeIcon = document.getElementById('eye-icon');
+            if (input.type === 'password') {
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+
+            
+            eyeIcon.style.animation = 'eyeAnimation 0.6s ease';
+        }
+
+      
+        document.getElementById('eye-icon').addEventListener('animationend', function() {
+            this.style.animation = '';  
+        });
+    </script>
+
+</body>
+</html>

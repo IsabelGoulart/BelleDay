@@ -1,0 +1,217 @@
+﻿body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+/* Cards na seção informativa */
+.card {
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Icons */
+.card i {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Rodapé */
+footer {
+    background-color: rgba(255, 138, 128, 1);
+}
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 10px;
+}
+
+
+.login {
+    display: inline-block;
+    background-color: 	#1E90FF; /* Cor de fundo do Instagram */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado padrão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 20px; /* Borda arredondada */
+    font-family: Arial, sans-serif; /* Fonte do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    border: none; /* Remove borda */
+    
+  }
+
+  .login:hover {
+    background-color: #5773FF; /* Altera a cor de fundo ao passar o mouse */
+  }
+
+/* Cards ajustados em três colunas */
+.container .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-4 {
+    max-width: 280px; /* Tamanho ajustado para os cards */
+}
+
+/* Estilo para o botão de pânico */
+.botao {
+    position: absolute;
+    right: 20px; /* Distância da borda direita */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta para o centro */
+    z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Remover fundo e borda */
+    background-color: transparent; /* Sem fundo */
+    border: none; /* Sem borda */
+    padding: 0; /* Remove o padding, pois não é mais necessário */
+    cursor: pointer; /* Indicador de que o botão é clicável */
+    box-shadow: none; /* Sem sombra */
+}
+
+/* Estilo da imagem dentro do botão */
+.imagem-botao {
+    width: 30px; /* Ajuste o tamanho da imagem */
+    height: 30px; /* Ajuste o tamanho da imagem */
+}
+
+
+/* Efeito ao clicar no botão */
+.botao:active {
+    animation: pular 1s ease-in-out; /* Animação de pulo mais suave e lenta */
+    opacity: 0.9; /* Diminui a opacidade ao clicar (efeito de piscar) */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transição suave ao clicar */
+}
+
+/* Animação de "pulo" mais suave */
+@keyframes pular {
+    0% {
+        transform: translateY(0); /* Começa no local original */
+    }
+    25% {
+        transform: translateY(-15px); /* Sobe um pouco mais */
+    }
+    50% {
+        transform: translateY(0); /* Volta para a posição inicial */
+    }
+    75% {
+        transform: translateY(-7px); /* Sobe menos na segunda metade */
+    }
+    100% {
+        transform: translateY(0); /* Retorna ao normal */
+    }
+}
+
+
+
+.definicao {
+    background-color: #FFF8DC;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.definicao h4 {
+    text-align: center;
+    color: #6495ED;
+    font-size: 50px;
+}
+
+.conteudo-definicao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite a imagem e o texto se ajustarem em telas menores */
+}
+
+.img-definicao {
+    border-radius: 50px;
+    max-width: 500px; /* Ajuste o tamanho da imagem conforme necessário */
+    margin-left: 20px; /* Espaçamento à esquerda da imagem */
+}
+
+.p-definicao {
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 30px;
+    padding-right: 20px; /* Adiciona espaçamento à direita */
+    color: #34495e;
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    font-size: 18px;
+    flex: 1; /* Permite que o parágrafo ocupe o restante do espaço disponível */
+}
+
+    
+.sobre{
+    background-color: #F0F8FF;
+    color: #333; 
+    padding: 20px; 
+}
+
+.sobre h3{
+    text-align:center;
+    color:#6495ED;
+    font-size:50px;
+   
+}
+
+.conteudo-sobre {
+    display: flex;
+    align-items: flex-start; /* Alinha a imagem e o texto no topo */
+    justify-content: center; /* Centraliza o conteúdo dentro do contêiner */
+}
+
+.img-sobre{
+    border-radius:50px;
+    max-width: 500px; /* Ajuste o tamanho da imagem conforme necessário */
+    margin: 0 20px 0 30px; /* Adiciona espaçamento à direita e à esquerda da imagem */
+}
+
+.p-sobre{
+    text-align: left; 
+    padding: 30px;
+    padding-right: 20px; /* Adiciona espaçamento à direita */
+    color: #34495e;
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    font-size: 18px; 
+}
+
+.atendimentos h4{
+    text-align:center;
+    font-size:30px;
+}
+
+.calendario{
+    background-color: #E6E6FA  ;
+}
+
+.h5{
+    font-size:40px;
+}
+
+.img-qb{
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    /* Estilos para telas menores */
+}

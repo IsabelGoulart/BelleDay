@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Inclusão do Font Awesome -->
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #e9cbd0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Permite que o conteúdo cresça além da janela */
+}
+
+.logo {
+    margin-top: 50px; /* Reduza o espaço superior */
+    width: 150px; 
+    height: 140px;
+    animation: floatLogo 3s ease-in-out infinite;
+}
+
+        .container {
+            display: flex;
+    flex-direction: column; /* Mantém os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(5, 9, 1, 0.212);
+    border-radius: 18px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Centraliza o texto */
+        }
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF723E;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+            max-width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 330px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 2px solid #FF659F;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color, box-shadow 0.3s; 
+        }
+
+        .form-group input:focus {
+            border-color: #000000;
+            outline: none;
+            box-shadow: 0 0 9px #000000; 
+        }
+
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .form-group .gender-label {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+            padding: 8px 15px;
+            border-radius: 25px;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-group .gender-label:hover {
+            background-color: #FF723E;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .form-group .gender-label input {
+            margin-right: 10px;
+        }
+
+        .form-group .gender-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .form-group .submit-button {
+            background-color: #FF723E;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .form-group .submit-button:hover {
+            background-color: #FF723E; 
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 10px; 
+            top: 50%;
+            transform: translateY(-10%);
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #FF659F;
+            font-size: 20px;
+        }
+
+        a {
+            color: #FF723E;
+        }
+
+        @keyframes floatLogo {
+            0% {
+                transform: translateX(0%) translateY(0);
+            }
+            50% {
+                transform: translateX(0%) translateY(-15px);
+            }
+            100% {
+                transform: translateX(0%) translateY(0);
+            }
+        }
+        .enter-button {
+            display: inline-block;
+            background-color: #FF723E;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .enter-button:hover {
+            background-color: #FF723E;
+            transform: scale(1.10);
+        }
+        .div2{
+            width: 400px;
+            max-width: 100%;
+        }
+        .signup-link {
+            font-size: 0.875rem;
+            text-align: center;
+            color: #6B7280;
+            margin-top: 1rem;
+        }
+
+        .signup-link a {
+            color: #FF723E;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>      
+    <img src="loguinha2.png" alt="Logo" class="logo"> 
+    <div class="container">     
+        <p class="form-title">Cadastro</p>
+        <form id="registration-form" method="POST" action="incluirPessoa.php">
+           
+            <div class="form-group">
+                <label for="username"></label>
+                <input type="Nome" name="nome" id="nome"  placeholder="Nome" required autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" name="email" id="email"  placeholder="Email"required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF" required autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="telefone" id="cpf"  placeholder="Telefone"  required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="cep" id="cpf"  placeholder="CEP"  required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="cidade" id="cpf"  placeholder="Cidade"  required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="estado" id="cpf"  placeholder="Estado"  required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="bairro" id="cpf"  placeholder="Bairro" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="cpf"></label>
+                <input type="text" name="ruanumero" id="cpf"  placeholder="Rua e Número"  required autocomplete="off">
+            </div>
+
+           
+            <div class="form-group">
+                <label for="confirm-password"></label>
+                <input type="password" name="confirm-senha" id="confirm-password" placeholder="Senha" required autocomplete="current-password">
+                <button type="button" class="show-password" onclick="togglePassword('confirm-password')"><i class="fas fa-eye"></i></button>
+            </div>
+           
+            <div class="form-group">
+                <button type="submit" href="aaaa.html" name="Cadastrar" class="submit-button">Cadastrar</button> 
+                
+            </div>
+            <p class="signup-link">
+                Já possui conta? <a href="login.html">Logar</a>
+            </p>
+            <div id="error-message" class="error-message"></div>
+
+        </div>
+    <script>
+        function togglePassword(id) {
+            var input = document.getElementById(id);
+            var button = input.nextElementSibling;
+            var type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+
+            var icon = button.querySelector('i');
+            icon.classList.toggle('fa-eye');  
+            icon.classList.toggle('fa-eye-slash');
+        }
+
+        document.getElementById('dob').max = new Date().toISOString().split("T")[0];
+
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/[^\d]+/g,''); 
+
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) {
+                return false; 
+            }
+
+            let soma = 0;
+            let resto;
+            for (let i = 1; i <= 9; i++) {
+                soma += parseInt(cpf.substring(i-1, i)) * (11 - i);
+            }
+            resto = (soma * 10) % 11;
+            if ((resto === 10) || (resto === 11)) {
+                resto = 0;
+            }
+            if (resto !== parseInt(cpf.charAt(9))) {
+                return false;
+            }
+
+            soma = 0;
+            for (let i = 1; i <= 10; i++) {
+                soma += parseInt(cpf.substring(i-1, i)) * (12 - i);
+            }
+            resto = (soma * 10) % 11;
+            if ((resto === 10) || (resto === 11)) {
+                resto = 0;
+            }
+            if (resto !== parseInt(cpf.charAt(10))) {
+                return false;
+            }
+
+            return true;
+        }
+
+        function validarFormulario(event) {
+            const cpf = document.getElementById('cpf').value;
+            const email = document.getElementById('email').value;
+            const confirmEmail = document.getElementById('confirm-email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+
+            if (!validarCPF(cpf)) {
+                event.preventDefault();
+                document.getElementById('error-message').innerText = 'CPF inválido.';
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+
+            if (email !== confirmEmail) {
+                event.preventDefault();
+                document.getElementById('error-message').innerText = 'Os emails não coincidem.';
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                document.getElementById('error-message').innerText = 'As senhas não coincidem.';
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+
+            if (!gender) {
+                event.preventDefault();
+                document.getElementById('error-message').innerText = 'Selecione um gênero.';
+                document.getElementById('error-message').style.display = 'block';
+                return;
+            }
+        }
+
+        document.getElementById('registration-form').addEventListener('submit', validarFormulario);
+    </script>
+</body>
+</html>
